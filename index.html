@@ -1,0 +1,18 @@
+<html>
+<script type="text/javascript">
+    window.onload = function(){
+        var interval = 120000; 
+        var images = document.getElementsByTagName('img');
+        var timer = setInterval(function(){
+            var ts = new Date().getTime();
+            for (var i = 0; i < images.length; i++) {
+                var src = images[i].src.split('?')[0];
+                images[i].src = src + '?ts=' + ts;
+            }
+        }, interval);
+    };            
+</script>
+<body>
+<img href="https://storage.googleapis.com/rps-home-site/backyard/latest.jpg" />
+</body>
+</html>
